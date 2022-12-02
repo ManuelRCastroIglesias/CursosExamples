@@ -1,77 +1,77 @@
-//#region INSTRUCCIONES:
-    // Añadir al principio ' console.clear(); ' para limpiar la consola.
+//#region INSTRUCTIONS:
+// Add to top ' console.clear(); ' To clean your console.
 console.clear();
 
-    //#region Para utilizar SwitchComments:
-    //  Poner en la línea superior ' //*/ // título de lo que hace o se pretende hacer.'
-    //   para descomentar el código: en la primera línea del SwitchComment añadir el primer '/'.
-    //   para re-comentar el código: en la primera línea del SwitchComment quitar el primer '/'.
-    //   Repetir en la línea inferior ' //*/ // título de lo que hace o se pretende hacer.'
-    //   esto garantiza que al contraer el comentario se visualice lo que contiene.
-    //   en modo comentado y contraído es fácil seleccionar el grupo y delete.
-  //#endregion Para utilizar SwitchComments:
+    //#region To use SwitchComments:
+    //  Put on top line ' //*/ // Title of what you do or intend to do.'
+    //   To uncomment the code: in the first line of the SwitchComment add the first '/' to '//*/'.
+    //   to re-comment the code: in the first line of the SwitchComment remove the first '/'.
+    //   Repeat on the bottom line ' //*/ // title of what you do or intend to do.'
+    //   This ensures that when you collapse the comment, what it contains is displayed.
+    //   In commented and collapsed mode it is easy to select the group and delete.
+  //#endregion To use SwitchComments:
 
-//#endregion INSTRUCCIONES:
+//#endregion INSTRUCTIONS:
 
-//#region 1.   - Leer JSON
-  /*/ //#region 1.- Leer JSON con let 'variable' = require('ruta')
-     // NOTA: Teoría.
-     // - require es una función sincrona y se llama solo una vez, lo que significa que las llamadas reciben un resultado en caché. Si el archivo está actualizado, no puede volver a leerlo con este método.
-     // - Su archivo debe tener la extensión '.json', por lo que no puede ser tan flexible. Sin la extensión adecuada, require no trata el archivo como un archivo JSON.
+//#region 1.   - Read JSON
+  /*/ //#region 1.- Read JSON with let 'variable' = require('rout')
+     // NOTE: Theory.
+     // - require It is a synchronous function and is called only once, which means that calls receive a cached result. if the file is up to date you cannot read it again by using this method.
+     // - Your file should have the '.json' extension, so it can't be as flexible. Without the proper extension, require does not treat the file as a JSON file.
 
     let jsonData = require( './data/personas.json' );
     console.log( jsonData );
     console.log( typeof ( jsonData ) );
-  //*/ //end#region 1.- Leer JSON con let 'variable' = require('ruta')
-//#endregion 1.   - Leer JSON
+  //*/ //end#region 1.- Read JSON with let 'variable' = require('rout')
+//#endregion 1.   - Read JSON
 
-//#region 2.   - Leer JSON con require('fs')
-  /*/ //Descomentar añadir una '/' al inicio, y para Recomentar quitarla.
+//#region 2.   - Read JSON with require('fs')
+  /*/ Uncomment add a '/' to startup, and to Recomment remove it
       const fs = require( 'fs' );
       let dataRead = fs.readFileSync( './data/personas.json' );
-  //*/ //Descomentar añadir una '/' al inicio, y para Recomentar quitarla.
-//#endregion 2.   - Leer JSON con require('fs')
+  //*/ Uncomment add a '/' to startup, and to Recomment remove it;
+//#endregion 2.   - Read JSON with require('fs')
 
-//#region 2.1. - Leer JSON con salida buffer
-  /*/ // 2.1.  - Leer JSON con salida buffer
-      const fs = require( 'fs' );
-      let dataRead = fs.readFileSync( './data/personas.json' );
-      console.log( dataRead );
-  //*/ // 2.1.  - Leer JSON con salida buffer
-//#endregion 2.1. - Leer JSON con salida buffer
+//#region 2.1. - Read JSON with buffer output
+/*/ // 2.1.  - Read JSON with buffer output
+    const fs = require( 'fs' );
+    let dataRead = fs.readFileSync( './data/personas.json' );
+    console.log( dataRead );
+//*/ // 2.1.  - Read JSON with buffer output
+//#endregion 2.1. - Read JSON with buffer output
 
-//#region 2.2. - Leer JSON convertido en objeto JS
-  /*/ // 2.2.- Leer JSON convertido en objeto JS
-      const fs = require( 'fs' );
-      let dataRead = fs.readFileSync( './data/personas.json' );
-      let personas = JSON.parse( dataRead );
-      console.log( personas );
-      console.log( typeof ( personas ) );
-  //*/ // 2.2.- Leer JSON convertido en objeto JS
-//#endregion 2.2. - Leer JSON convertido en objeto JS
+//#region 2.2. - Read JSON converted to JS object
+/*/ // 2.2.- Read JSON converted to JS object
+    const fs = require( 'fs' );
+    let dataRead = fs.readFileSync( './data/personas.json' );
+    let personas = JSON.parse( dataRead );
+    console.log( personas );
+    console.log( typeof ( personas ) );
+//*/ // 2.2.- Read JSON converted to JS object
+//#endregion 2.2. - Read JSON converted to JS object
 
-//#region 2.3. - Leer JSON accediendo a data.personas
-  /*/ // 2.3.- Leer JSON accediendo a data.personas
-      const fs = require( 'fs' );
-      let dataRead = fs.readFileSync( './data/personas.json' );
-      let personas = JSON.parse( dataRead ).personas;
-      console.log( personas );
-      console.log( typeof ( personas ) );
-  //*/ // 2.3.- Leer JSON accediendo a data.personas
-//#endregion 2.3. - Leer JSON accediendo a data.personas
+//#region 2.3. - Read JSON accessingdata.personas
+/*/ // 2.3.- Read JSON accessingdata.personas
+    const fs = require( 'fs' );
+    let dataRead = fs.readFileSync( './data/personas.json' );
+    let personas = JSON.parse( dataRead ).personas;
+    console.log( personas );
+    console.log( typeof ( personas ) );
+//*/ // 2.3.- Read JSON accessingdata.personas
+//#endregion 2.3. - Read JSON accessingdata.personas
 
-//#region 2.4. - ¿Cómo...?
-  /*/ // 2.4.- ¿Cómo...? Leer JSON accediendo al interior de data.personas[¿qué?]
-      const fs = require( 'fs' );
-      let dataRead = fs.readFileSync( './data/personas.json' );
-      let personas = JSON.parse( dataRead ).personas;
-      console.log( personas );
-      console.log( typeof ( personas ) );
-  //*/ // 2.4.- ¿Cómo...? Leer JSON accediendo al interior de data.personas[¿qué?]
-//#endregion 2.4. - ¿Cómo...?
+//#region 2.4. - How...?
+/*/ // 2.4.- How...? Read JSON accessing the inside of data.personas[what?]
+    const fs = require( 'fs' );
+    let dataRead = fs.readFileSync( './data/personas.json' );
+    let personas = JSON.parse( dataRead ).personas;
+    console.log( personas );
+    console.log( typeof ( personas ) );
+//*/ // 2.4.- How...? Read JSON accessing the inside of data.personas[what?]
+//#endregion 2.4. - How...?
 
-//#region 3.3. - Escribir en archivo JSON
-/*/ // 3.3.- Escribir en archivo JSON
+//#region 3.3. - Write to JSON file
+/*/ // 3.3.- Write to JSON file
 const fs = require( 'fs' );
 let dataWrite = {
     "cursos": [
@@ -103,5 +103,5 @@ fs.writeFile( './data/cursos.json', jsonData, ( error ) => {
         }
 } );
 
-//*/ // 3.3.- Escribir en archivo JSON
-//#endregion 3.3. - Escribir en archivo JSON
+//*/ // 3.3.- Write to JSON file
+//#endregion 3.3. - Write to JSON file
