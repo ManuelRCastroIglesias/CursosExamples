@@ -26,10 +26,10 @@ console.clear();
 //#endregion 1.   - Read JSON
 
 //#region 2.   - Read JSON with require('fs')
-  /*/ Uncomment add a '/' to startup, and to Recomment remove it
+  /*/ //Uncomment add slash '/' to startup, and to Recomment remove it
       const fs = require( 'fs' );
       let dataRead = fs.readFileSync( './data/personas.json' );
-  //*/ Uncomment add a '/' to startup, and to Recomment remove it;
+  //*/ //Uncomment add slash '/' to startup, and to Recomment remove it;
 //#endregion 2.   - Read JSON with require('fs')
 
 //#region 2.1. - Read JSON with buffer output
